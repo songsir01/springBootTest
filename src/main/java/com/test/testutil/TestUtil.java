@@ -8,6 +8,9 @@
 */
 
 package com.test.testutil;
+
+import org.junit.Test;
+
 /**
  * ClassName:TestUtil <br/>
  * Function: TODO ADD FUNCTION. <br/>
@@ -64,7 +67,11 @@ public class TestUtil {
 		System.out.println("其他字符："+其他字符+"\n");
 	}
 	
-	//修改修改吸怪，然后git测试sdfwsf
+	@Test
+	public void tetst(){
+		
+	}
+	
 	
 
 }
