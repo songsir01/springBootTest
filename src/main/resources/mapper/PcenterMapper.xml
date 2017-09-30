@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.mapper.PcenterMapper">
+	<select id="getUserByName" resultType="com.test.pojo.User" parameterType="String"  resultMap="userAndRole">
+		select u.*,r.*
+		from user u LEFT JOIN role r
+		on u.rid=r.rid
+		where u.username=#{username}
+	</select>
+	<resultMap type="com.test.pojo.User" id="userAndRole">
+		<id column="uid" property="uid"/>
+		<result column="username" property="username"/>
+		<result column="sex" property="sex"/>
+		<result column="description" property="description"/>
+		<result column="password" property="password"/>
+		<result column="img" property="img"/>
+		<association property="role" javaType="com.test.pojo.Role">
+			<id column="rid" property="rid"/>
+			<result column="rname" property="rname"/>
+		</association>
+	</resultMap>
+	<update id="updatePcent" parameterType="com.test.pojo.User">
+		update user set description=#{description},sex=#{sex} where username=#{username}
+	</update>
+	<update id="updatePcentAndPass" parameterType="com.test.pojo.User">
+		update user set description=#{description},sex=#{sex},password=#{password} where username=#{username}
+	</update>
+	<update id="updatePcentAndImg" parameterType="com.test.pojo.User">
+		update user set description=#{description},sex=#{sex},img=#{img} where username=#{username}
+	</update>
+	<update id="updatePcentAndPassAndImg" parameterType="com.test.pojo.User">
+		update user set description=#{description},sex=#{sex},img=#{img},password=#{password} where username=#{username}
+	</update>
+</mapper>
