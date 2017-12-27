@@ -69,7 +69,7 @@ public class TestUtil {
 	
 	@Test
 	public void tetst(){
-		
+		System.out.println("这样可以吗");
 	}
 	
 	
