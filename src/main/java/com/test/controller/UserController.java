@@ -17,6 +17,8 @@ import java.util.regex.Pattern;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -44,6 +46,8 @@ import net.sf.json.JSONObject;
  */
 @Controller
 public class UserController {
+	
+	public Logger logger = LogManager.getLogger(UserController.class);
 
 	@Autowired
 	private UserServiceI userService;
@@ -62,6 +66,7 @@ public class UserController {
 	 */
 	@RequestMapping("/regist")
 	public String regist() {
+		logger.info("register..页面");
 		return "reg";
 	}
 
@@ -102,6 +107,7 @@ public class UserController {
 				e.printStackTrace();
 			}
 		}
+		logger.info("shenmewanyier");
 	}
 
 	/**

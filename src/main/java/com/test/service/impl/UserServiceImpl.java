@@ -14,6 +14,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.test.mapper.TDaoI;
 import com.test.mapper.UserMapper;
 import com.test.pojo.Role;
 import com.test.pojo.User;
@@ -36,6 +37,8 @@ public class UserServiceImpl implements UserServiceI {
 	
 	@Autowired
 	private UserMapper userDao;
+	@Autowired
+	TDaoI tDao;
 
 	@Override
 	public User userList(int i) {

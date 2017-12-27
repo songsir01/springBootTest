@@ -1,28 +1,24 @@
 /**
  * Project Name:SpringBootTest
- * File Name:Main.java
- * Package Name:com.test.controller
- * Date:2017年9月14日下午1:01:20
+ * File Name:TtServiceI.java
+ * Package Name:com.test.service
+ * Date:2017年11月28日下午12:23:41
  * Copyright (c) 2017, chenzhou1025@126.com All Rights Reserved.
  *
 */
 
-package com.test.controller;
-
+package com.test.service;
 /**
- * ClassName:Main <br/>
+ * ClassName:TtServiceI <br/>
  * Function: TODO ADD FUNCTION. <br/>
  * Reason:	 TODO ADD REASON. <br/>
- * Date:     2017年9月14日 下午1:01:20 <br/>
+ * Date:     2017年11月28日 下午12:23:41 <br/>
  * @author   SongYapeng
  * @version  
  * @since    JDK 1.7
  * @see 	 
  */
-public class Main{
-	
-	
-	
-	
+public interface TtServiceI {
+
 }
 
