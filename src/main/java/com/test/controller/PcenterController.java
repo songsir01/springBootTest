@@ -6,25 +6,26 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.test.pojo.User;
-import com.test.service.PcenterServiceI;
 
 @Controller
-public class PcenterController {
+public class PcenterController extends BaseController{
+	
+	public Logger logger = LogManager.getLogger(PcenterController.class);
 
-	@Autowired
-	private PcenterServiceI pcenterService;
 
 	@RequestMapping("/pcenter")
 	public String pcenter(HttpServletRequest request) {
 		String username = (String) request.getSession().getAttribute("user");
 		User user = pcenterService.getUserByName(username);
 		request.setAttribute("user", user);
+		logger.info("个人中心页面："+user);
 		return "sys/pcenter";
 	}
 
@@ -34,7 +35,7 @@ public class PcenterController {
 		
 		//System.out.println(user);
 		if(imageUrl.isEmpty()){
-			System.out.println("没有上传图片！");
+			logger.info("没有上传图片");
 			if(user.getPassword().equals("")){
 				pcenterService.updatePcent(user);
 				return "doing";
@@ -80,7 +81,7 @@ public class PcenterController {
 				e.printStackTrace();
 			}
 		}
-		
+		logger.info("个人信息修改");
 		return "err";
 	}
 

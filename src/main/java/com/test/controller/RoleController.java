@@ -15,14 +15,15 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.sf.json.JSONArray;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.eclipse.jdt.internal.compiler.flow.LoopingFlowContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.test.pojo.Role;
-import com.test.service.RoleServiceI;
+
+import net.sf.json.JSONArray;
 
 /**
  * ClassName:RoleController <br/>
@@ -36,10 +37,9 @@ import com.test.service.RoleServiceI;
  * @see
  */
 @Controller
-public class RoleController {
-
-	@Autowired
-	private RoleServiceI rolerService;
+public class RoleController extends BaseController{
+	
+	public Logger logger = LogManager.getLogger(RoleController.class);
 
 	@RequestMapping("/roleManager")
 	public String roleManager(HttpServletRequest request) {
@@ -49,6 +49,8 @@ public class RoleController {
 
 		request.setAttribute("roleList", roleList);
 
+		logger.info("角色列表:"+roleList);
+		
 		return "sys/roleManager";
 	}
 
@@ -76,6 +78,7 @@ public class RoleController {
 			e.printStackTrace();
 
 		}
+		logger.info("根据roleId查找角色："+roleById);
 	}
 	@RequestMapping("/roleUpStart")
 	public void roleUpStart(HttpServletResponse response,Role role,String pids){
@@ -93,6 +96,7 @@ public class RoleController {
 			e.printStackTrace();
 			
 		}
+		logger.info("角色修改");
 	}
 	
 	@RequestMapping("/roleDel")
@@ -110,6 +114,7 @@ public class RoleController {
 			e.printStackTrace();
 			
 		}
+		logger.info("角色删除");
 	}
 	/**
 	 * 
@@ -147,6 +152,7 @@ public class RoleController {
 			e.printStackTrace();
 			
 		}
+		logger.info("验证角色是否已经存在："+roleByName);
 	}
 	
 	@RequestMapping("/addRole")
@@ -173,6 +179,7 @@ public class RoleController {
 			e.printStackTrace();
 			
 		}
+		logger.info("添加角色");
 		
 	}
 

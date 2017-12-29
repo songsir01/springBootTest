@@ -19,13 +19,13 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.test.pojo.Goods;
-import com.test.service.ListManagerServiceI;
 import com.test.util.Constants;
 import com.test.util.ExportExcel;
 import com.test.util.RequestUtil;
@@ -44,14 +44,13 @@ import com.test.util.vo.Result;
  * @see
  */
 @Controller
-public class ListManagerController {
-
-	@Autowired
-	private ListManagerServiceI listService;
+public class ListManagerController extends BaseController{
+	
+	public Logger logger = LogManager.getLogger(ListManagerController.class);
 
 	@RequestMapping("/listManager")
 	public String listManager() {
-
+		logger.info("list页面操作跳转");
 		return "sys/listManager";
 	}
 
@@ -78,7 +77,7 @@ public class ListManagerController {
 			params.put("search", "%" + search + "%");
 		}
 		Result<PageData<Goods>> result = listService.catListPage(pageData, params);
-
+		logger.info("查看list列表："+result);
 		return new ModelAndView(Constants.JSON_VIEW, Constants.JSON_ROOT, result.getBusinessResult());
 	}
 
@@ -103,12 +102,14 @@ public class ListManagerController {
 		for (String s : gids) {
 			templets = listService.deleteGoodsById(Integer.parseInt(s));
 		}
+		logger.info("删除商品："+templets);
 		return new ModelAndView(Constants.JSON_VIEW, Constants.JSON_ROOT, templets);
 	}
 
 	@RequestMapping("/addGoods")
 	public ModelAndView addGoods(HttpServletRequest request, Goods goods) {
 		Result<String> result = listService.addGoods(goods);
+		logger.info("增加商品："+result);
 		return new ModelAndView(Constants.JSON_VIEW, Constants.JSON_ROOT, result);
 	}
 
@@ -116,13 +117,14 @@ public class ListManagerController {
 	public ModelAndView goodsByGid(HttpServletRequest request, Goods goods) {
 		String gid = RequestUtil.getString(request, "gid");
 		Map<String, Object> resultMap = listService.getGoodsById(Integer.parseInt(gid));
-
+		logger.info("根据gid查找商品："+resultMap);
 		return new ModelAndView(Constants.JSON_VIEW, Constants.JSON_ROOT, resultMap);
 	}
 
 	@RequestMapping("/ExportExcel")
 	public void ExportExcel(HttpServletResponse response) {
-
+		
+		logger.info("报表导出");
 		@SuppressWarnings("rawtypes")
 		List goodsList = listService.getAllGoodsList();
 

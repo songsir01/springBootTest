@@ -1,32 +1,12 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page isELIgnored="false" %>
 <html>
 <head>
-<link href="/plugins/nifty-v2.5/demo/css/bootstrap.min.css"
+<link href="plugins/nifty-v2.5/demo/css/bootstrap.min.css"
 	rel="stylesheet">
-<!-- <link -->
-<!-- 	href="/plugins/nifty-v2.5/demo/plugins/bootstrap-table/bootstrap-table.css" -->
-<!-- 	rel="stylesheet"> -->
-<!-- <link -->
-<!-- 	href="/plugins/nifty-v2.5/demo/plugins/gmaps/examples/examples.css" -->
-<!-- 	rel="stylesheet"> -->
-<script src="/plugins/nifty-v2.5/demo/js/jquery-2.2.4.min.js"></script>
-<script src="/plugins/nifty-v2.5/demo/js/bootstrap.min.js"></script>
-<!-- <script src="/plugins/nifty-v2.5/demo/js/bootstrap.js"></script> -->
-<!-- <script -->
-<!-- 	src="/plugins/nifty-v2.5/demo/plugins/bootstrap-table/bootstrap-table.js"></script> -->
-<!-- <script -->
-<!-- 	src="/plugins/nifty-v2.5/demo/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script> -->
-<!-- <link -->
-<!-- 	href="/plugins/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css" -->
-<!-- 	rel="stylesheet" /> -->
-<!-- <link rel="stylesheet" -->
-<!-- 	href="/plugins/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css"> -->
-<!-- <script -->
-<!-- 	src="/plugins/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js"></script> -->
-<!-- <script -->
-<!-- 	src="/plugins/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js"></script> -->
-<!-- <script src="/js/tool.js"></script> -->
+<script src="plugins/nifty-v2.5/demo/js/jquery-2.2.4.min.js"></script>
+<script src="plugins/nifty-v2.5/demo/js/bootstrap.min.js"></script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="text/javascript"

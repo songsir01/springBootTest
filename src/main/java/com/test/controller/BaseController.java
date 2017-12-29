@@ -11,6 +11,10 @@ package com.test.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.test.service.ListManagerServiceI;
+import com.test.service.PcenterServiceI;
+import com.test.service.RoleServiceI;
+import com.test.service.UserServiceI;
 import com.test.util.SpringBootRedis;
 
 /**
@@ -27,6 +31,15 @@ public class BaseController {
 	
 	@Autowired
 	public SpringBootRedis<String> springBootRedis;
-
+	@Autowired
+	public UserServiceI userService;
+	@Autowired
+	public RoleServiceI rolerService;
+	@Autowired
+	public PcenterServiceI pcenterService;
+	@Autowired
+	public ListManagerServiceI listService;
+	
+	
 }
 

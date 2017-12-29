@@ -19,14 +19,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.test.pojo.Role;
 import com.test.pojo.User;
-import com.test.service.UserServiceI;
 import com.test.util.PageUtil;
 import com.test.util.vo.UserVo;
 
@@ -45,13 +43,9 @@ import net.sf.json.JSONObject;
  * @see
  */
 @Controller
-public class UserController {
+public class UserController extends BaseController{
 	
 	public Logger logger = LogManager.getLogger(UserController.class);
-
-	@Autowired
-	private UserServiceI userService;
-
 	/**
 	 * 
 	 * regist:(跳到注册页面). <br/>
@@ -156,6 +150,7 @@ public class UserController {
 				}
 			}
 		}
+		logger.info("注册");
 
 	}
 
@@ -172,17 +167,20 @@ public class UserController {
 				request.getSession().setAttribute("user", userLogin.getUsername());
 				request.getSession().setAttribute("rid", userLogin.getRid());
 				response.getWriter().write("1");// 密码正确！
+				request.setAttribute("a", "bbb");
 			}
 		} catch (IOException e) {
 
 			e.printStackTrace();
 
 		}
+		logger.info("登录");
 
 	}
 
 	@RequestMapping("/zhuye")
 	public String zhuye() {
+		logger.info("进入主页");
 		return "sys/index";
 	}
 
@@ -212,6 +210,7 @@ public class UserController {
 			e.printStackTrace();
 
 		}
+		logger.info("退出登录");
 	}
 
 	/**
@@ -241,6 +240,7 @@ public class UserController {
 
 			}
 		}
+		logger.info("判断是否登录");
 
 	}
 
@@ -272,6 +272,7 @@ public class UserController {
 			e.printStackTrace();
 
 		}
+		logger.info("根据角色查找权限："+perList);
 
 	}
 
@@ -328,6 +329,7 @@ public class UserController {
 		request.setAttribute("lastPage", pUtil.getLastpage());
 		request.setAttribute("keyWord", replaceName);
 
+		logger.info("用户列表");
 		return "sys/userManager";
 	}
 
@@ -359,6 +361,7 @@ public class UserController {
 			e.printStackTrace();
 
 		}
+		logger.info("删除用户");
 	}
 
 	/**
@@ -385,6 +388,7 @@ public class UserController {
 			e.printStackTrace();
 
 		}
+		logger.info(" 根据id查找用户"+userByUid);
 	}
 
 	/**
@@ -429,27 +433,28 @@ public class UserController {
 
 			}
 		}
+		logger.info("更新操作");
 
 	}
 	
 	@RequestMapping("/caozuo1")
 	public String caozuo1(){
-		
+		logger.info("caozuo1");
 		return "sys/caozuo1";
 	}
 	@RequestMapping("/caozuo2")
 	public String caozuo2(){
-		
+		logger.info("caozuo2");
 		return "sys/caozuo2";
 	}
 	@RequestMapping("/caozuo3")
 	public String caozuo3(){
-		
+		logger.info("caozuo3");
 		return "sys/caozuo3";
 	}
 	@RequestMapping("/ceshiyixia")
 	public String ceshiyixia(){
-		
+		logger.info("ceshiyixia");
 		return "sys/ceshiyixia";
 	}
 

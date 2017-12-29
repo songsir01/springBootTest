@@ -1,12 +1,12 @@
-﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+﻿﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <title>Frame top</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<script type="text/javascript" src="/public/style/js/jquery.js"></script>
-	<script type="text/javascript" src="/public/style/js/page_common.js"></script>
-    <link href="/public/style/css/common_style_blue.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="<%=request.getContextPath() %>/public/style/js/jquery.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath() %>/public/style/js/page_common.js"></script>
+    <link href="<%=request.getContextPath() %>/public/style/css/common_style_blue.css" rel="stylesheet" type="text/css" />
 	
 	<style type="text/css">
 <!--
@@ -14,7 +14,7 @@ body {
 margin: 0;
 }
 #Head_1 {
-    background: url("/public/style/images/img/top_head1_bg.gif") repeat-x scroll 0 0 transparent;
+    background: url("<%=request.getContextPath() %>/public/style/images/img/top_head1_bg.gif") repeat-x scroll 0 0 transparent;
     height: 64px;
     margin: 0 auto;
     width: 100%;
@@ -48,7 +48,7 @@ margin: 0;
 margin-left: 10px;
 }
 #Head_2 {
-   background: url("/public/style/images/img/top_head2_bg.gif") repeat-x scroll 0 0 transparent;
+   background: url("<%=request.getContextPath() %>/public/style/images/img/top_head2_bg.gif") repeat-x scroll 0 0 transparent;
     border-bottom: 1px solid #FFFFFF;
     border-top: 1px solid #A0C6E1;
     height: 36px;
@@ -123,11 +123,11 @@ margin-left: 10px;
 		
 		<div class="Head2_FunctionList" style="float:left">
 			<a href="javascript: window.parent.right.history.back();">
-				<img src="/public/style/images/Header_back.gif" width="24" height="24" style="margin-top: -8px;"/>
+				<img src="<%=request.getContextPath() %>/public/style/images/Header_back.gif" width="24" height="24" style="margin-top: -8px;"/>
 				<b>后退</b>
 			</a>
 			<a href="javascript: window.parent.right.history.forward();">
-				<img src="/public/style/images/Header_forward.gif" width="24" height="24" style="margin-top: -8px;"/>
+				<img src="<%=request.getContextPath() %>/public/style/images/Header_forward.gif" width="24" height="24" style="margin-top: -8px;"/>
 				<b>前进</b>		
 			</a>
         </div>
@@ -141,13 +141,9 @@ margin-left: 10px;
 			 Hello,<span style="color: red"><%=request.getSession().getAttribute("user") %></span>
 			 <a href="#" onclick="notLogin()">退出登录</a>
 			<a href="javascript: window.parent.right.history.go(0);">
-				<img src="/public/style/images/Header_refresh.gif" width="24" height="24" style="margin-top: -8px;"/>
+				<img src="<%=request.getContextPath() %>/public/style/images/Header_refresh.gif" width="24" height="24" style="margin-top: -8px;"/>
 				<b>刷新(IE、Chrome)</b>		
 			</a>
-<%--			<a href="javascript: window.parent.right.location.reload(true);">--%>
-<%--				<img src="../style/images/Header_refresh.gif" width="24" height="24" style="margin-top: -8px;"/>--%>
-<%--				<b>刷新(Firefox)</b>		--%>
-<%--			</a>--%>
 		</div>
 	</div>
 </body>

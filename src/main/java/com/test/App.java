@@ -28,6 +28,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @since JDK 1.7
  * @see
  */
+@SuppressWarnings("deprecation")
 @MapperScan("com.test.mapper")
 @SpringBootApplication
 @EnableAutoConfiguration
@@ -45,7 +46,7 @@ public class App  extends org.springframework.boot.context.web.SpringBootServlet
 
 	@Override
 	public void run(String... arg0) throws Exception {
-		System.out.println("启动。。。");
+		System.out.println("SpringBoot启动。。。");
 	}
 
 }
