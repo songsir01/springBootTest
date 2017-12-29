@@ -19,6 +19,9 @@
 	</properties>
 	<dependencies>
 
+
+	<!-- 切记  各个SpringBoot包的版本尽量保持一致，不然  也许会出现各种错误。  暂时发现的错误有：如果版本不一致，redis使用时连接异常。问题很难排查 -->
+
 		  <!--tomcat支持  -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -80,7 +83,7 @@
 			<artifactId>fastjson</artifactId>
 			<version>1.2.41</version>
 		</dependency>
-		<!-- 排除其中logback对log4j4的影响 -->
+		<!-- 排除其中logback对log4j4的影响  （很重要）-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
