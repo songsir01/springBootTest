@@ -107,7 +107,7 @@ public class UserController {
 				e.printStackTrace();
 			}
 		}
-		logger.info("shenmewanyier");
+		logger.info("注册验证用户是否已经存在"+useruniqueList);
 	}
 
 	/**

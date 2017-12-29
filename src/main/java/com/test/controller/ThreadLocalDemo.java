@@ -11,10 +11,6 @@ package com.test.controller;
 
 import java.util.Random;
 
-import org.springframework.web.context.request.NativeWebRequest;
-
-import ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy;
-
 /**
  * ClassName:ThreadLocalDemo <br/>
  * Function: TODO ADD FUNCTION. <br/>
@@ -28,8 +24,11 @@ import ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy;
  */
 public class ThreadLocalDemo implements Runnable {
 	
+	private final static ThreadLocal<TestStudent> studentThreadLocal = new ThreadLocal<TestStudent>();
+	
 	private TestStudent student = new TestStudent();
-	private ThreadLocal<TestStudent> sLocal= new ThreadLocal();
+	
+//	static Map<Object,Object> map = new HashMap<>();
 
 	@Override
 	public void run() {
@@ -37,7 +36,7 @@ public class ThreadLocalDemo implements Runnable {
 	}
 
 	private void accessStudent() {
-		sLocal.set(student);
+		studentThreadLocal.set(student);
 //		TestStudent student = new TestStudent();
 		String currentThreadName = Thread.currentThread().getName();
 		System.out.println(currentThreadName + "is running");
@@ -49,14 +48,15 @@ public class ThreadLocalDemo implements Runnable {
 //		TestStudent student = new TestStudent();
 
 		student.setAge(age);
-		System.out.println("thread " + currentThreadName + " first read age is:" + sLocal.get().getAge());
+		System.out.println("thread " + currentThreadName + " first read age is:" + studentThreadLocal.get().getAge());
 
-		try {
+//		map.put(currentThreadName, studentThreadLocal.get().getAge());
+		/*try {
 			Thread.sleep(5000);
 		} catch (InterruptedException ex) {
 			ex.printStackTrace();
 		}
-		System.out.println("thread " + currentThreadName + " second read age is:" +  sLocal.get().getAge());
+		System.out.println("thread " + currentThreadName + " second read age is:" +  studentThreadLocal.get().getAge());*/
 
 	}
 
@@ -69,7 +69,7 @@ public class ThreadLocalDemo implements Runnable {
 		return student;
 	}*/
 
-	private final static ThreadLocal studentThreadLocal = new ThreadLocal();
+	
 
 	public static void main(String[] args) {
 		
@@ -81,12 +81,22 @@ public class ThreadLocalDemo implements Runnable {
 		Thread t4 = new Thread(td, "d");
 		Thread t5 = new Thread(td, "e");
 		Thread t6 = new Thread(td, "f");
+		Thread t7 = new Thread(td, "g");
+		Thread t8 = new Thread(td, "h");
+		Thread t9 = new Thread(td, "i");
+		Thread t10 = new Thread(td, "j");
 		t1.start();
 		t2.start();
 		t3.start();
 		t4.start();
 		t5.start();
 		t6.start();
+		t7.start();
+		t8.start();
+		t9.start();
+		t10.start();
+		
+		
 
 	}
 

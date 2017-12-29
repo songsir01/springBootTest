@@ -14,10 +14,13 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,7 +43,29 @@ import com.test.util.ExcelPoiUtil;
  * @see
  */
 @Controller
-public class TestController {
+public class TestController extends BaseController{
+	
+	
+	
+	
+	@RequestMapping(value = "/newTest")
+	public void newTest(){
+	
+		
+		boolean set = springBootRedis.set("song", "song");
+		System.out.println(set);
+		
+		String song = springBootRedis.get("song");
+		System.out.println(song);
+		
+		
+	}
+	
+	
+	
+	
+	
+	
 
 	@SuppressWarnings("unused")
 	@Autowired
@@ -90,6 +115,11 @@ public class TestController {
 		hashMap.put(aString2, aString2);
 		util.exportExcel("b", aString, aString, list2, fileOutputStream, hashMap);
 	}
-
+	
+	@Test
+	public void testtest(){
+		
+		
+	}
 
 }
