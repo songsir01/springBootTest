@@ -14,6 +14,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -34,7 +35,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableAutoConfiguration
 @ServletComponentScan //过滤器
 @EnableTransactionManagement // 事务
-public class App  extends org.springframework.boot.context.web.SpringBootServletInitializer implements CommandLineRunner{
+public class App  extends SpringBootServletInitializer implements CommandLineRunner{
 
 	public static void main(String[] args) {
 		SpringApplication.run(App.class);
