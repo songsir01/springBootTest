@@ -3,7 +3,7 @@
  * File Name:User.java
  * Package Name:com.test.pojo
  * Date:2017年8月24日下午5:44:07
- * Copyright (c) 2017, chenzhou1025@126.com All Rights Reserved.
+ * Copyright (c) 2017, songsir01@163.com All Rights Reserved.
  *
 */
 

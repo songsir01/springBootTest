@@ -3,7 +3,7 @@
  * File Name:RoleDaoI.java
  * Package Name:com.test.dao
  * Date:2017年8月30日下午3:58:50
- * Copyright (c) 2017, chenzhou1025@126.com All Rights Reserved.
+ * Copyright (c) 2017, songsir01@163.com All Rights Reserved.
  *
 */
 

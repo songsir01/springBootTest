@@ -3,7 +3,7 @@
  * File Name:UserVo.java
  * Package Name:com.test.vo
  * Date:2017年8月11日下午3:08:48
- * Copyright (c) 2017, chenzhou1025@126.com All Rights Reserved.
+ * Copyright (c) 2017, songsir01@163.com All Rights Reserved.
  *
 */
 

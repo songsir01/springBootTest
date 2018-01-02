@@ -3,7 +3,7 @@
  * File Name:ListManagerController.java
  * Package Name:com.test.controller
  * Date:2017年8月31日下午4:19:07
- * Copyright (c) 2017, chenzhou1025@126.com All Rights Reserved.
+ * Copyright (c) 2017, songsir01@163.com All Rights Reserved.
  *
  */
 

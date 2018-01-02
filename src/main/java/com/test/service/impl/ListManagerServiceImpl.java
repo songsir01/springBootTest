@@ -3,7 +3,7 @@
  * File Name:ListManagerServiceImpl.java
  * Package Name:com.test.service.impl
  * Date:2017年8月31日下午4:21:11
- * Copyright (c) 2017, chenzhou1025@126.com All Rights Reserved.
+ * Copyright (c) 2017, songsir01@163.com All Rights Reserved.
  *
 */
 

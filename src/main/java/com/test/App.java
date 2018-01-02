@@ -4,7 +4,7 @@ package com.test;
  * File Name:App.java
  * Package Name:com.test
  * Date:2017年8月18日下午5:23:39
- * Copyright (c) 2017, chenzhou1025@126.com All Rights Reserved.
+ * Copyright (c) 2017, songsir01@163.com All Rights Reserved.
  *
 */
 

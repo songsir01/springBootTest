@@ -3,7 +3,7 @@
  * File Name:ListManagerServiceI.java
  * Package Name:com.test.service
  * Date:2017年8月31日下午4:20:45
- * Copyright (c) 2017, chenzhou1025@126.com All Rights Reserved.
+ * Copyright (c) 2017, songsir01@163.com All Rights Reserved.
  *
 */
 

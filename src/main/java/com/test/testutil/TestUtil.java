@@ -3,7 +3,7 @@
  * File Name:TestUtil.java
  * Package Name:com.test.testutil
  * Date:2017年9月15日下午3:16:23
- * Copyright (c) 2017, chenzhou1025@126.com All Rights Reserved.
+ * Copyright (c) 2017, songsir01@163.com All Rights Reserved.
  *
 */
 

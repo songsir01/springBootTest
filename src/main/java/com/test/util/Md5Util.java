@@ -6,7 +6,7 @@ import java.security.MessageDigest;
  * File Name:Md5Util.java
  * Package Name:
  * Date:2017年8月23日上午9:50:55
- * Copyright (c) 2017, chenzhou1025@126.com All Rights Reserved.
+ * Copyright (c) 2017, songsir01@163.com All Rights Reserved.
  *
 */
 

@@ -36,7 +36,17 @@ import org.apache.http.util.EntityUtils;
 
 import com.alibaba.fastjson.JSONObject;
 
-
+/**
+ * 
+ * ClassName: HttpClientUtil <br/>
+ * Function: httpClient工具类. <br/>
+ * Reason: TODO ADD REASON(可选). <br/>
+ * date: 2018年1月2日 下午4:27:18 <br/>
+ *
+ * @author SongYapeng
+ * @version 
+ * @since JDK 1.7
+ */
 public class HttpClientUtil {  
     private static PoolingHttpClientConnectionManager cm;  
     private static String EMPTY_STR = "";  
