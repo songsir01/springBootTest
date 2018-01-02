@@ -162,7 +162,6 @@ public class ListManagerController extends BaseController{
 		try {
 			response.getWriter().write("导出成功！");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

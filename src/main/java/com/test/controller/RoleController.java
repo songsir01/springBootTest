@@ -17,7 +17,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.eclipse.jdt.internal.compiler.flow.LoopingFlowContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -73,10 +72,7 @@ public class RoleController extends BaseController{
 		try {
 			response.getWriter().write(json.toString());
 		} catch (IOException e) {
-
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-
 		}
 		logger.info("根据roleId查找角色："+roleById);
 	}
@@ -91,10 +87,7 @@ public class RoleController extends BaseController{
 		try {
 			response.getWriter().write(i+"");
 		} catch (IOException e) {
-			
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-			
 		}
 		logger.info("角色修改");
 	}
@@ -109,10 +102,7 @@ public class RoleController extends BaseController{
 		try {
 			response.getWriter().write(i+"");
 		} catch (IOException e) {
-			
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-			
 		}
 		logger.info("角色删除");
 	}
@@ -147,10 +137,7 @@ public class RoleController extends BaseController{
 				response.getWriter().write("1");
 			}
 		} catch (IOException e) {
-			
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-			
 		}
 		logger.info("验证角色是否已经存在："+roleByName);
 	}
@@ -174,10 +161,7 @@ public class RoleController extends BaseController{
 		try {
 			response.getWriter().write(i+"");
 		} catch (IOException e) {
-			
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-			
 		}
 		logger.info("添加角色");
 		

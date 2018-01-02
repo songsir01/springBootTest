@@ -125,10 +125,7 @@ public class UserController extends BaseController{
 			try {
 				response.getWriter().write("4");// 用户名不合法
 			} catch (IOException e) {
-
-				// TODO Auto-generated catch block
 				e.printStackTrace();
-
 			} 
 		} else {
 			@SuppressWarnings("rawtypes")
@@ -170,9 +167,7 @@ public class UserController extends BaseController{
 				request.setAttribute("a", "bbb");
 			}
 		} catch (IOException e) {
-
 			e.printStackTrace();
-
 		}
 		logger.info("登录");
 
@@ -206,9 +201,7 @@ public class UserController extends BaseController{
 		try {
 			response.getWriter().write("1");
 		} catch (IOException e) {
-
 			e.printStackTrace();
-
 		}
 		logger.info("退出登录");
 	}
@@ -235,9 +228,7 @@ public class UserController extends BaseController{
 			try {
 				response.getWriter().write("1");
 			} catch (IOException e) {
-
 				e.printStackTrace();
-
 			}
 		}
 		logger.info("判断是否登录");
@@ -268,9 +259,7 @@ public class UserController extends BaseController{
 		try {
 			response.getWriter().write(json.toString());
 		} catch (IOException e) {
-
 			e.printStackTrace();
-
 		}
 		logger.info("根据角色查找权限："+perList);
 
@@ -384,9 +373,7 @@ public class UserController extends BaseController{
 		try {
 			response.getWriter().write(json.toString());
 		} catch (IOException e) {
-
 			e.printStackTrace();
-
 		}
 		logger.info(" 根据id查找用户"+userByUid);
 	}
@@ -415,9 +402,7 @@ public class UserController extends BaseController{
 					response.getWriter().write("0");
 				}
 			} catch (IOException e) {
-
 				e.printStackTrace();
-
 			}
 		} else {
 			int i = userService.userPassUpdate(user);
@@ -428,9 +413,7 @@ public class UserController extends BaseController{
 					response.getWriter().write("0");
 				}
 			} catch (IOException e) {
-
 				e.printStackTrace();
-
 			}
 		}
 		logger.info("更新操作");
