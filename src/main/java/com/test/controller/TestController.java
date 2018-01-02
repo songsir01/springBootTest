@@ -49,23 +49,6 @@ public class TestController extends BaseController{
 		System.out.println(users.length);
 	}
 	
-	
-	@RequestMapping("/401")
-	public String forZeroOne(){
-	
-		return "401";
-	}
-	@RequestMapping("/404")
-	public String forZeroFour(){
-		
-		return "404";
-	}
-	@RequestMapping("/500")
-	public String fiveHan(){
-		
-		return "500";
-	}
-	
 	@RequestMapping(value = "/newTest")
 	public void newTest(){
 	
@@ -78,11 +61,6 @@ public class TestController extends BaseController{
 		
 		
 	}
-	
-	
-	
-	
-	
 	
 
 	@SuppressWarnings("unused")
