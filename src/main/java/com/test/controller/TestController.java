@@ -18,16 +18,23 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.alibaba.fastjson.JSONObject;
 import com.test.mapper.UserMapper;
 import com.test.pojo.User;
 import com.test.service.UserServiceI;
+import com.test.service.api.ApiConfig;
 import com.test.util.ExcelPoiUtil;
+import com.test.util.HttpClientUtil;
 
 /**
  * ClassName:TestController <br/>
@@ -42,6 +49,30 @@ import com.test.util.ExcelPoiUtil;
  */
 @Controller
 public class TestController extends BaseController{
+	
+	@Autowired
+	ApiConfig apiConfig;
+	
+	@ResponseBody
+	@RequestMapping("testInterface")
+	public String testInterface(HttpServletRequest request,HttpServletResponse response){
+		
+		JSONObject json = new JSONObject();
+		
+		json.put("test", "this is test");
+		
+		return json.toString();
+	}
+	
+	@RequestMapping("testTestInterface")
+	public String testTestInterface(HttpServletRequest request,HttpServletResponse response){
+		String test_service = apiConfig.getTest_service();
+		String result = HttpClientUtil.httpPostRequest(test_service);
+		JSONObject json = JSONObject.parseObject(result);
+		System.out.println(json.toString());
+		return "";
+	}
+	
 	
 	@Test
 	public void abc(User...users){
@@ -96,20 +127,24 @@ public class TestController extends BaseController{
 		return "sys/index";
 	}*/
 	
-	public static void main(String[] args) throws FileNotFoundException {
-		ExcelPoiUtil<User> util = new ExcelPoiUtil<>();
-		User user = new User();
-		user.setUsername("aa");
-		File file = new File("e:\\");
-		String aString[]={"a","b"};
-		List<User> list2 = new ArrayList<>();
-		list2.add(user);
-		OutputStream fileOutputStream = new FileOutputStream(file);
-		//long date = new Date(1111111111111);
-		Map<String ,String > hashMap = new HashMap<>();
-		String aString2="2011";
-		hashMap.put(aString2, aString2);
-		util.exportExcel("b", aString, aString, list2, fileOutputStream, hashMap);
+	public static void main(String[] args){
+		try {
+			ExcelPoiUtil<User> util = new ExcelPoiUtil<>();
+			User user = new User();
+			user.setUsername("aa");
+			File file = new File("e:\\");
+			String aString[]={"a","b"};
+			List<User> list2 = new ArrayList<>();
+			list2.add(user);
+			OutputStream fileOutputStream = new FileOutputStream(file);
+			//long date = new Date(1111111111111);
+			Map<String ,String > hashMap = new HashMap<>();
+			String aString2="2011";
+			hashMap.put(aString2, aString2);
+			util.exportExcel("b", aString, aString, list2, fileOutputStream, hashMap);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	@Test
