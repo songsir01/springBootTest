@@ -12,9 +12,12 @@ package com.test.controller;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -26,7 +29,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.support.StandardMultipartHttpServletRequest;
 
 import com.alibaba.fastjson.JSONObject;
 import com.test.mapper.UserMapper;
@@ -52,6 +58,35 @@ public class TestController extends BaseController{
 	
 	@Autowired
 	ApiConfig apiConfig;
+	
+	/**
+	 * 
+	 * test2:(). <br/>
+	 * @author SongYapeng
+	 * @Date 2018年1月8日下午4:30:59
+	 * @param response
+	 * @param request
+	 * @return
+	 * @since JDK 1.7
+	 */
+	@ResponseBody
+	@RequestMapping(value = "test2",method = { RequestMethod.POST },produces="text/html;charset=UTF-8")
+	public String test2(HttpServletResponse response,HttpServletRequest request){
+		try {
+			StandardMultipartHttpServletRequest req = (StandardMultipartHttpServletRequest) request;
+			Iterator<String> iterator = req.getFileNames();
+			while (iterator.hasNext()) {
+				MultipartFile file = req.getFile(iterator.next());
+				String fileNames = file.getOriginalFilename();
+				InputStream input = file.getInputStream();
+				System.out.println(fileNames + " " +input);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return "";
+	}
+	
 	
 	@ResponseBody
 	@RequestMapping("testInterface")
