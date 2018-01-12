@@ -23,7 +23,18 @@ import org.junit.Test;
  */
 public class TestUtil {
 	
-	
+	/***
+	 * 
+	 * sdfsfsf
+	 * parttion:(这里用一句话描述这个方法的作用). <br/>
+	 * @author SongYapeng
+	 * @Date 2018年1月12日下午4:03:01
+	 * @param array
+	 * @param lo
+	 * @param hi
+	 * @return
+	 * @since JDK 1.7
+	 */
 	public static int parttion(int [] array,int lo,int hi){
 		int key=array[lo];
 		while(lo<hi){
