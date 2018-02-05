@@ -54,7 +54,9 @@ public class PcenterController extends BaseController{
 			//String suffixName = fileName.substring(fileName.lastIndexOf("."));//文件后缀名
 
 			String realPath = request.getServletContext().getRealPath("/style/userimg/");
-			File dest = new File(realPath + fileName);
+			logger.info("realPath:" +realPath);
+			File dest = new File(realPath + "/" + fileName);
+			logger.info("dest---------------------------:"+dest);
 			if (!dest.getParentFile().exists()) {
 				dest.getParentFile().mkdirs();
 			}

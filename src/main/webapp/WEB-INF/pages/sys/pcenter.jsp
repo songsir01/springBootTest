@@ -37,6 +37,7 @@
 							<img style='max-width:68px;width:68px;width:expression(width>68?"68px":width "px");max-width: 68px;' 
 							src="<%=request.getContextPath() %>/style/userimg/${user.img}">
 							<input type="hidden" name="image" value="${user.img}">
+							<input type="hidden" name="image2" value="<%=request.getContextPath() %>/style/userimg/${user.img}">
 						</div>
 						<input type="file" name="imageUrl"  onchange="fileClear(this)"/>
 					</td>
