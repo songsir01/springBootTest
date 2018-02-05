@@ -20,5 +20,7 @@ package com.test.mapper;
  */
 public interface TDaoI {
 
+	void addSomeTestTransaction();
+
 }
 

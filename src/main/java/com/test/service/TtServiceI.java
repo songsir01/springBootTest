@@ -20,5 +20,7 @@ package com.test.service;
  */
 public interface TtServiceI {
 
+	void addSomeTestTransaction() throws Exception;
+
 }
 

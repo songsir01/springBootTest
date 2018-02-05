@@ -37,6 +37,7 @@ import org.springframework.web.multipart.support.StandardMultipartHttpServletReq
 import com.alibaba.fastjson.JSONObject;
 import com.test.mapper.UserMapper;
 import com.test.pojo.User;
+import com.test.service.TtServiceI;
 import com.test.service.UserServiceI;
 import com.test.service.api.ApiConfig;
 import com.test.util.ExcelPoiUtil;
@@ -58,6 +59,9 @@ public class TestController extends BaseController{
 	
 	@Autowired
 	ApiConfig apiConfig;
+	@Autowired
+	TtServiceI testService;
+	
 	
 	/**
 	 * 
@@ -182,10 +186,21 @@ public class TestController extends BaseController{
 		}
 	}
 	
-	@Test
-	public void testtest(){
+
+	@RequestMapping(value = "/dayTest1")
+	public String dayTest1(HttpServletRequest request) {
 		
+		try {
+			testService.addSomeTestTransaction();
+			System.out.println("这里。。。");
+			
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+			
+		}
 		
+		return "";
 	}
 
 }
