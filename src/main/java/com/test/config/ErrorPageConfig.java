@@ -39,7 +39,6 @@ public class ErrorPageConfig implements EmbeddedServletContainerCustomizer {
 				ErrorPage error401Page = new ErrorPage(HttpStatus.UNAUTHORIZED, "/401");
 				ErrorPage error404Page = new ErrorPage(HttpStatus.NOT_FOUND, "/404");
 				ErrorPage error500Page = new ErrorPage(HttpStatus.INTERNAL_SERVER_ERROR, "/500");
-
 				container.addErrorPages(error401Page, error404Page, error500Page);
 
 			}
