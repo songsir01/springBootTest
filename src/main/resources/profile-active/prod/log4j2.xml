@@ -16,8 +16,8 @@
         <!-- fileName:日志位置以及文件名；filePattern:rolling时新建文件的位置以及命名规则。命名文件名称需要细到时分秒是注意不要这么写
             HH:mm:ss，文件名称不可以包含特殊字符：使用"-"代替 -->
         <RollingRandomAccessFile name="INFO_FILE"
-                                 fileName="${sys:user.home}/logs/songsir-demoboot/${INFO_FILE_NAME}.log"
-                                 filePattern="${sys:user.home}/logs/songsir-demoboot/base/$${date:yyyy-MM}/${INFO_FILE_NAME}-%d{yyyy-MM-dd}-%i.log.gz"
+                                 fileName="${sys:user.home}/logs/springBootTest/${INFO_FILE_NAME}.log"
+                                 filePattern="${sys:user.home}/logs/springBootTest/base/$${date:yyyy-MM}/${INFO_FILE_NAME}-%d{yyyy-MM-dd}-%i.log.gz"
                                  append="true">
 
             <Filters>
@@ -38,8 +38,8 @@
         </RollingRandomAccessFile>
 
         <RollingRandomAccessFile name="ERROR_FILE"
-                                 fileName="${sys:user.home}/logs/songsir-demoboot/${ERROR_FILE_NAME}.log"
-                                 filePattern="${sys:user.home}/logs/songsir-demoboot/error/$${date:yyyy-MM}/${ERROR_FILE_NAME}-%d{yyyy-MM}-%i.log.gz"
+                                 fileName="${sys:user.home}/logs/springBootTest/${ERROR_FILE_NAME}.log"
+                                 filePattern="${sys:user.home}/logs/springBootTest/error/$${date:yyyy-MM}/${ERROR_FILE_NAME}-%d{yyyy-MM}-%i.log.gz"
                                  append="true">
             <Filters>
                 <ThresholdFilter level="fatal" onMatch="DENY" onMismatch="NEUTRAL"/>
