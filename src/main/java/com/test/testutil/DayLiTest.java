@@ -332,16 +332,16 @@ class sadkjlag {
 class hhh{
 	
 	public static void main(String[] args) {
-		
+
 		aa();
-		
+
 	}
 	public static int aa() {
-		
+
 		Random a = new Random();
 		System.out.println(a);
-		
-		
+
+
 		return 0;
 	}
 }

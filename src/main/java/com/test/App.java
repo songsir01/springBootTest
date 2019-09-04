@@ -5,8 +5,7 @@ package com.test;
  * Package Name:com.test
  * Date:2017年8月18日下午5:23:39
  * Copyright (c) 2017, songsir01@163.com All Rights Reserved.
- *
-*/
+ */
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.CommandLineRunner;
@@ -23,42 +22,36 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * Function: TODO ADD FUNCTION. <br/>
  * Reason: TODO ADD REASON. <br/>
  * Date: 2017年8月18日 下午5:23:39 <br/>
- * 
  * @author Administrator
- * @version
- * @since JDK 1.7
  * @see
+ * @since JDK 1.7
  */
-@SuppressWarnings("deprecation")
 @MapperScan("com.test.mapper")
 @SpringBootApplication
-@EnableAutoConfiguration
-@ServletComponentScan //过滤器
-@EnableTransactionManagement // 事务
-public class App  extends SpringBootServletInitializer implements CommandLineRunner{
+@ServletComponentScan
+@EnableTransactionManagement
+public class App extends SpringBootServletInitializer implements CommandLineRunner {
 
-	public static void main(String[] args) {
-		SpringApplication.run(App.class);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(App.class);
+    }
 
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-		return builder.sources(App.class);
-	}
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return builder.sources(App.class);
+    }
 
-	@Override
-	public void run(String... arg0) throws Exception {
-		System.out.println("SpringBoot启动。。。");
-	}
+    @Override
+    public void run(String... arg0) throws Exception {
+        System.out.println("SpringBoot启动。。。");
+    }
 
 }
 
 /**
  * 这里 修改修改改一下
- * 
+ * <p>
  * zaizai xiugai u gaiuxii gaioug
- * 
+ * <p>
  * day ceshi shshi
- * haha haha fenzhihuebing 
- * 
- * 
+ * haha haha fenzhihuebing
  */
